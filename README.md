@@ -55,3 +55,7 @@ uci add_list network.wgserver.allowed_ips="::/0"
 uci commit network
 /etc/init.d/network restart
 ```
+* **Add cron job to restart tunnel if connection drops**:
+```
+*/15 * * * * /usr/bin/wireguard_watchdog 
+```
